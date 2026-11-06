@@ -201,7 +201,7 @@ legend{font-size:var(--step-1);font-style:italic;margin-bottom:10px;padding:0}
 .perks{list-style:none;padding:0;margin:6px 0 0;display:grid;gap:8px}
 .perks li{display:flex;gap:10px;align-items:baseline}
 .perks li::before{content:"";width:8px;height:10px;flex:none;background:var(--rose);clip-path:polygon(50% 0,100% 30%,100% 70%,50% 100%,0 70%,0 30%)}
-.signup{display:grid;gap:12px;background:var(--card);border:1px solid var(--line);padding:28px;border-radius:4px}
+.signup{display:grid;gap:12px;min-height:150px;align-content:center;background:var(--card);border:1px solid var(--line);padding:28px;border-radius:4px}
 .signup label{font-family:var(--f-label);letter-spacing:.1em;font-size:.85rem;color:var(--ink-soft)}
 .signup input[type=email],.signup input[type=text]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:12px 14px;width:100%}
 .signup input:focus{outline:2px solid var(--gilt);outline-offset:1px}
@@ -439,17 +439,15 @@ footer a:hover{color:var(--gilt)}
         <h2 class="h2" id="hearth-title">Letters from the castle</h2>
         <p>Join my newsletter for news and treats from the realm, about once a month.</p>
         <ul class="perks">
-          <li>A free bonus scene: Caedmon's first night guarding the nursery</li>
+          <li>A free bonus scene: Kaizen's first day in Zerinthia</li>
           <li>Cover reveals and release dates before anyone else</li>
           <li>Character art, maps, and signed-copy giveaways</li>
         </ul>
       </div>
-      <form class="signup" id="signup" novalidate>
-        <div class="row"><label for="nm">First name</label><input id="nm" type="text" autocomplete="given-name"></div>
-        <div class="row"><label for="em">Email</label><input id="em" type="email" autocomplete="email" required></div>
-        <button class="btn solid" type="submit">Send me the bonus scene</button>
-        <p class="msg" id="msg" role="status"></p>
-      </form>
+      <div class="signup" id="signup">
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="51b0de0c-015d-4a81-8822-e398169b8368"></script>
+        <noscript><p class="msg">Turn on JavaScript to see the signup form.</p></noscript>
+      </div>
     </div>
   </section>
 </main>
@@ -564,14 +562,6 @@ footer a:hover{color:var(--gilt)}
     vl.textContent=courts[best].label; vc.textContent=courts[best].name; vt.textContent=courts[best].text;
   });
 
-  /* ---------- Newsletter (preview only) ---------- */
-  var f=document.getElementById('signup'), msg=document.getElementById('msg');
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var em=document.getElementById('em').value.trim();
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){ msg.className='msg err'; msg.textContent='Enter an email address like name@example.com.'; return; }
-    msg.className='msg'; msg.textContent='Looks good. This is a design preview, so the form is not connected to a mailing list yet.';
-  });
 })();
 </script>
 </body>
