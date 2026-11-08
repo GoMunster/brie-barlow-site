@@ -545,21 +545,21 @@ footer a:hover{color:var(--gilt)}
   size();
   if(!reduce) requestAnimationFrame(loop);
 
-  /* ---------- Court quiz ---------- */
-  var courts={
-    crystal:{name:'The Amethyst Court',label:'You belong to the scholars',text:'Keepers of the singing stones. You trust what you can learn, guard what you know, and your magic is quiet until the moment it is not. Your book to start with: Heir of Shattered Light.'},
-    steel:{name:'The Court of Steel',label:'You belong to the sworn',text:'Knights, duellists and oath-keepers. You protect first and ask questions after, and your loyalty is the sharpest weapon in the realm. Your book to start with: A Blade Beneath the Moonstone.'},
-    hearth:{name:'The Hearth Court',label:'You belong to the guardians',text:'Mothers, beast-tamers and the fiercest hearts in Vael. Nobody underestimates you twice. Your book to start with: The Wyrm\'s Lullaby.'}
-  };
-  var quiz=document.getElementById('quiz');
-  quiz.addEventListener('change',function(){
-    var tally={crystal:0,steel:0,hearth:0}, n=0, last=null;
-    ['q1','q2','q3'].forEach(function(q){ var el=quiz.querySelector('input[name='+q+']:checked'); if(el){tally[el.value]++;n++;last=el.value;} });
-    var vl=document.getElementById('v-label'), vc=document.getElementById('v-court'), vt=document.getElementById('v-text');
-    if(n<3){ vl.textContent=(3-n)+' question'+(3-n===1?'':'s')+' to go'; return; }
-    var best=last; for(var k in tally) if(tally[k]>tally[best]) best=k;
-    vl.textContent=courts[best].label; vc.textContent=courts[best].name; vt.textContent=courts[best].text;
-  });
+/* ---------- Court quiz ---------- */
+//  var courts={
+//    crystal:{name:'The Amethyst Court',label:'You belong to the scholars',text:'Keepers of the singing stones. You trust what you can learn, guard what you know, and your magic is quiet until the moment it is not. Your book to start with: Heir of Shattered Light.'},
+//    steel:{name:'The Court of Steel',label:'You belong to the sworn',text:'Knights, duellists and oath-keepers. You protect first and ask questions after, and your loyalty is the sharpest weapon in the realm. Your book to start with: A Blade Beneath the Moonstone.'},
+//    hearth:{name:'The Hearth Court',label:'You belong to the guardians',text:'Mothers, beast-tamers and the fiercest hearts in Vael. Nobody underestimates you twice. Your book to start with: The Wyrm\'s Lullaby.'}
+// };
+//  var quiz=document.getElementById('quiz');
+//  quiz.addEventListener('change',function(){
+//    var tally={crystal:0,steel:0,hearth:0}, n=0, last=null;
+//    ['q1','q2','q3'].forEach(function(q){ var el=quiz.querySelector('input[name='+q+']:checked'); if(el){tally[el.value]++;n++;last=el.value;} });
+//    var vl=document.getElementById('v-label'), vc=document.getElementById('v-court'), vt=document.getElementById('v-text');
+//    if(n<3){ vl.textContent=(3-n)+' question'+(3-n===1?'':'s')+' to go'; return; }
+//    var best=last; for(var k in tally) if(tally[k]>tally[best]) best=k;
+//    vl.textContent=courts[best].label; vc.textContent=courts[best].name; vt.textContent=courts[best].text;
+//  }); 
 
 })();
 </script>
